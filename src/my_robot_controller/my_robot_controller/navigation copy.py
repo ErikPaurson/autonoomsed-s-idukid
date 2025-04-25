@@ -14,10 +14,10 @@ class TurtleNavigationNode(Node):
         self.get_logger().info("Navigation Node started")
 
         self.goal_poses = [  # Define goal positions and orientations
-            {'x': -2.32, 'y': -1.07, 'yaw': -30},
-            {'x': 2.1, 'y': -1.1, 'yaw': 60},
+            {'x': 3.32, 'y': -1.07, 'yaw': -30},
+            {'x': 3.11, 'y': -0.3, 'yaw': 60},
             {'x': 0.89, 'y': -3.37, 'yaw': 0},
-            {'x': -3.2, 'y': -2.9, 'yaw': 90}
+            {'x': -3, 'y': -2.9, 'yaw': 90}
         ]
 
         self.current_goal_index = 0
@@ -41,8 +41,8 @@ class TurtleNavigationNode(Node):
     def publish_initial_pose(self):
         initial_pose = PoseWithCovarianceStamped()
         initial_pose.header.frame_id = 'map'
-        initial_pose.pose.pose.position.x = -0.1
-        initial_pose.pose.pose.position.y = -0.1
+        initial_pose.pose.pose.position.x = -2.0
+        initial_pose.pose.pose.position.y = -0.5
 
         quaternion = tf_transformations.quaternion_from_euler(0, 0, 0)
         initial_pose.pose.pose.orientation.x = quaternion[0]
@@ -61,7 +61,7 @@ class TurtleNavigationNode(Node):
             (current_pose.position.y - goal_pose['y']) ** 2
         )
 
-        if distance_to_goal < 0.5:  # Threshold to consider the goal reached
+        if distance_to_goal < 0.3:  # Threshold to consider the goal reached
             self.publish_next_goal()
 
     def publish_next_goal(self):
