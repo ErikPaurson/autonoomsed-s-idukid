@@ -32,8 +32,9 @@ setup(
             "controller=my_robot_controller.turtle_controller:main",
             "mapping=my_robot_controller.mapping:main",
             "navigation = my_robot_controller.navigation:main",
-            'aw_nav = my_robot_controller.aw_navigation:main',
-            "car_nav = my_robot_controller.av_nav:main"
+            #'av_nav = my_robot_controller.av_navigation:main',
+            'aw_nav = my_robot_controller.aw_navigation:main'
+            #"car_nav = my_robot_controller.av_nav:main"
         ],
     },
 )
