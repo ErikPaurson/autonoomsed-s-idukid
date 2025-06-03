@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<testsuites name="/ros2_ws/autoware_map/scenario_test_runner" failures="0" errors="1" tests="1">
+  <testsuite name="sample" failures="0" errors="1" tests="1">
+    <testcase name="sample_0">
+      <error type="InternalError" message="attempting to request a message part outside the valid range" />
+    </testcase>
+  </testsuite>
+</testsuites>
